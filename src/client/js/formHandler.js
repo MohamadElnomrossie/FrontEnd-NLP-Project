@@ -1,10 +1,28 @@
-import {checkForName} from './nameChecker'
+import {checkInput} from "./checkInput"
 async function handleSubmit(event) {
     event.preventDefault()
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+   if(checkInput(formText))
      // JSON data parsed by `data.json()` call
+      {postData('http://localhost:8081/test', { text: formText }).then(data => {
+      let result;
+      let score_tag=data.score_tag
+
+    if (score_tag==='N'){
+        result='Negative'
+    }
+    else if (score_tag==='P'){
+        result='Positive'    }
+    else{
+        result='Neutral'
+    }
+        document.getElementById('results').innerHTML=result;
+    }).catch(err=>console.log(err));}
+    else{
+        c=document.getElementById('results').innerHTML="Only is string allowed"; 
+    }
+}
     async function postData(url = '', data = {}) {
         // Default options are marked with *
         const response = await fetch(url, {
@@ -22,21 +40,5 @@ async function handleSubmit(event) {
         });
         return response.json(); // parses JSON response into native JavaScript objects
       }
-      postData('http://localhost:8081/test', { text: formText })
-  .then(data => {
-      console.log(data);
-      let result;
-      let score_tag=data.score_tag
 
-    if (score_tag==='N'){
-        result='Negative'
-    }
-    else if (score_tag==='P'){
-        result='Positive'    }
-    else{
-        result='Neutral'
-    }
-        document.getElementById('results').innerHTML=result;
-    }).catch(err=>console.log(err));
-}
-export { handleSubmit }
+export { handleSubmit}
