@@ -22,7 +22,7 @@ async function handleSubmit(event) {
         });
         return response.json(); // parses JSON response into native JavaScript objects
       }
-      postData('https://salty-thicket-43971.herokuapp.com/', { text: formText })
+      postData('http://localhost:8081/test', { text: formText })
   .then(data => {
       console.log(data);
       let result;
