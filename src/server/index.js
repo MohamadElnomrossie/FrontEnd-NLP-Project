@@ -22,9 +22,9 @@ app.get('/', function (req, res) {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
+    console.log('Running!')
 })
-app.post("/test", async(req,res) => {
+app.post("/", async(req,res) => {
     const formData = new FormData();
     formData.append("key", process.env['API_KEY']);
     formData.append("txt", req.body.text);
