@@ -20,7 +20,7 @@ async function handleSubmit(event) {
         document.getElementById('results').innerHTML=result;
     }).catch(err=>console.log(err));}
     else{
-        c=document.getElementById('results').innerHTML="Only is string allowed"; 
+        document.getElementById('results').innerHTML="Only is string allowed"; 
     }
 }
     async function postData(url = '', data = {}) {
