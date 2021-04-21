@@ -24,8 +24,9 @@ async function handleSubmit(event) {
     }
 }
     async function postData(url = '', data = {}) {
-        // Default options are marked with *
+       
         const response = await fetch(url, {
+          // source: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, *cors, same-origin
           cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
