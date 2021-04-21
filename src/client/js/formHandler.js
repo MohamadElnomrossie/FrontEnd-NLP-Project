@@ -17,7 +17,12 @@ async function handleSubmit(event) {
     else{
         result='Neutral'
     }
-        document.getElementById('results').innerHTML=result;
+        document.getElementById('results').innerHTML=data.score_tag;
+        document.getElementById('agreement').innerHTML=data.agreement;
+        document.getElementById('confidence').innerHTML=data.confidence;
+        document.getElementById('irony').innerHTML=data.irony;
+        document.getElementById('subjectivity').innerHTML=data.subjectivity;
+       
     }).catch(err=>console.log(err));}
     else{
         document.getElementById('results').innerHTML="Only is string allowed"; 
