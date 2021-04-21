@@ -25,6 +25,7 @@ app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 app.post("/test", async(req,res) => {
+  // source:https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/dev-tools
     const formData = new FormData();
     formData.append("key", process.env['API_KEY']);
     formData.append("txt", req.body.text);
