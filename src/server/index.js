@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
+app.listen(process.env.PORT, function () {
     console.log('Example app listening on port 8081!')
 })
 app.post("/test", async(req,res) => {
