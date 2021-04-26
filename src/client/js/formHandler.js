@@ -5,7 +5,7 @@ async function handleSubmit(event) {
     let formText = document.getElementById('name').value
    if(checkInput(formText))
      // JSON data parsed by `data.json()` call
-      {postData('http://localhost:8081/test', { text: formText }).then(data => {
+      {postData('https://salty-thicket-43971.herokuapp.com/test', { text: formText }).then(data => {
       let result;
       let score_tag=data.score_tag
 
